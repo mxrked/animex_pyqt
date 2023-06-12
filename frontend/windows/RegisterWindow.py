@@ -8,8 +8,9 @@ from PyQt5.QtWidgets import *
 from PyQt5 import uic, QtCore, QtGui
 from PyQt5.QtGui import QCursor
 
-from frontend.assets.variables.arrays import active_connections
+from backend.database.classes.Connection import db_connection
 
+from frontend.assets.variables.arrays import active_connections
 
 
 import sys, pyodbc, atexit
