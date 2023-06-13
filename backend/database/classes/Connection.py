@@ -18,22 +18,25 @@ class Connection:
         :return: connect
         '''
 
-        try:
-            if self.connect is not None:
-                return self.connect
+        if self.connect is not None:
+            return self.connect
 
-            connectionString = 'Driver={ODBC Driver 17 for SQL Server};Server=localhost;Database=Animex;Trusted_Connection=yes;'
+        connectionString = 'Driver={ODBC Driver 17 for SQL Server};Server=localhost;Database=Animex;Trusted_Connection=yes;'
+        try:
             self.connect = pyodbc.connect(connectionString)
 
             if self.connect:
                 print("Connected to the database.")
 
-                active_connections.append(self.connect) # Keeps track of the active connections for later closing
+                active_connections.append(self.connect)  # Keeps track of the active connections for later closing
 
                 return self.connect
-
         except pyodbc.Error as e:
-            print("Failed to connect to the database.")
+            print("An error occurred while connecting to the database:", str(e))
+            self.connect = None
+
+        print(False)
+
 
 # Create an instance of Connection class
 make_connection = Connection()
