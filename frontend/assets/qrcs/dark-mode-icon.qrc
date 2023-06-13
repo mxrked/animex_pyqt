@@ -1,0 +1,5 @@
+<RCC>
+  <qresource prefix="newPrefix">
+    <file>../imgs/dark-mode-icon.png</file>
+  </qresource>
+</RCC>
