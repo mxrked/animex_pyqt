@@ -1,8 +1,8 @@
-# Animeplex
+# Animex
 
 * THIS GUIDE IS DEDICATED TO WINDOWS USERS *
 
-A anime check-list program.                                                                                                                                                                                                                           
+A anime application.                                                                                                                                                                                                                           
 Created with PyQt5                                                                                                            
 By Parker Phelps
 
@@ -30,27 +30,46 @@ SETTING UP THE PROGRAM
    - Easy Way: 
       Create a new query and copy and paste the "DATABASE_CREATOR.sql" (backend/) contents into the query and execute it. Now the table for the program has been created.
    - Hard Way:
-      Right click on Animeplex > Tables > New > New Table. Now add the following columns to the table:
-      - ID: int - (In the columns properties, make sure that Identity Specification is set to Yes, 1, 1)
-      - User_Email - nvarchar(MAX) - ALLOW_NULLS
-      - User_Password - nvarchar(MAX) - ALLOW_NULLS
-      - User_Watched_Array - nvarchar(MAX) - ALLOW_NULLS
-      - User_Favorites_Array - nvarchar(MAX) - ALLOW_NULLS                      
-                                                                                             
-      Now save the table as "Users"
+      Right click on Animex > Tables > New > New Table. Now add the following columns to the table:
+      - UserID: int - (In the columns properties, make sure that Identity Specification is set to Yes, 1)
+      - UserEmail: nvarchar(MAX)
+      - UserName: nvarchar(MAX)
+      - UserPassword: nvarchar(MAX)
+      - UserWatchedAnime: nvarchar(MAX)
+      - UserFavoritedProducts: nvarchar(MAX)
+      - UserFavoritedAnime: nvarchar(MAX)
+      - UserCart: nvarchar(MAX)
+      
+
 6. Now you must create the "Anime" table. There are 2 ways you can do this.
    - Easy Way: 
       Create a new query and copy and paste the "DATABASE_CREATOR.sql" (backend/database/) contents into the query and execute it. Now the table for the program has been created.
    - Hard Way:
       Right click on Animeplex > Tables > New > New Table. Now add the following columns to the table:
-      - Anime_ID: int - (In the columns properties, make sure that Identity Specification is set to Yes, 1, 1)
-      - Anime_Name - nvarchar(MAX) - ALLOW_NULLS
-      - Anime_Watched - bit - ALLOW_NULLS
-      - Anime_Favorited - bit - ALLOW_NULLS              
-                                                                                             
-      Now save the table as "Anime"
+      - AnimeID: int - (In the columns properties, make sure that Identity Specification is set to Yes, 1)
+      - AnimeImg: nvarchar(MAX)
+      - AnimeName: nvarchar(MAX)
+      - AnimeType: nvarchar(MAX)
+      - AnimeYears: nvarchar(MAX)
+      - AnimeDesc: nvarchar(MAX)
+      - AnimeFavorited: bit
+      - AnimeWatched: bit
 
-7. Now download the whole project and run the program's "animeplex.exe" (output/animeplex/animplex.exe) file. You should be seeing green text at the bottom that says "All requirements were found!", if you do see it, the program is working. If you see one of the following errors here is why:
+7. Now you must create the "Products" table. There are 2 ways you can do this.
+   - Easy Way: 
+      Create a new query and copy and paste the "DATABASE_CREATOR.sql" (backend/database/) contents into the query and execute it. Now the table for the program has been created.
+   - Hard Way:
+      Right click on Animeplex > Tables > New > New Table. Now add the following columns to the table:
+      - ProductID: int - (In the columns properties, make sure that Identity Specification is set to Yes, 1)
+      - ProductImg: nvarchar(MAX)
+      - ProductName: nvarchar(MAX)
+      - ProductDesc: nvarchar(MAX)
+      - ProductPrice: nvarchar(MAX)
+      - ProductQuantity: nvarchar(MAX)
+      - ProductFavorited: bit
+      - ProductAdded: bit
+                                 
+8. Now download the whole project and run the program's "animex.exe" (output/animex/animex.exe) file. You should be seeing green text at the bottom that says "All requirements were found!", if you do see it, the program is working. If you see one of the following errors here is why:
    - "Both SSMS and ODBC were not found! Refer to the README.md for installation." = This means that neither SSMS or ODBC Driver 17 were found. You must install both in the proper location for it to be picked up (Perferred to install in there default locations via wizard)
    - "ODBC was not found! Download ODBC Driver 17 for SQL Server." = This means that ODBC Driver 17 was not found. You must install it in the proper location for it to be picked up (Perferred to install in its default location via wizard)
    - "SSMS was not found!." = This means SSMS was not found. You must install it in the proper location for it to be picked up (Perferred to install in its default location via wizard)
